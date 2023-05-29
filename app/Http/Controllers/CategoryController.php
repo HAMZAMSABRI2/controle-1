@@ -66,4 +66,10 @@ class CategoryController extends Controller
 
 
     }
+
+
+    public function deleteTask($id) 
+    {
+         Category::destroy($id);
+    }
 }

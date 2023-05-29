@@ -25,3 +25,5 @@ Route::get('edittask/{id}', [CategoryController::class, 'editTask'])->name('rout
 
 
 Route::put('updatetask/{id}', [CategoryController::class, 'updateTask'])->name('route-update-task');
+
+Route::delete('deletetask/{id}' , [CategoryController::class, 'deleteTask'])->name('route-delete-task');

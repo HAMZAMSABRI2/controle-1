@@ -38,8 +38,30 @@
                     </td>
 
                     <td>
-                        <a href="">supprimer</a>
-                    </td>
+                        
+                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $item->id }}">Supprimer</button>
+
+                        <div class="modal fade" id="deleteModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-headern bg-danger">
+                                        <h5 class="modal-title text-white" id="exampleModalLabel">Confirmation de suppression</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Voulez-vous vraiment supprimer cette catégorie ?
+                                    </div>
+                                    <form action="{{ route('route-delete-task', $item->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                 </tr>
 
                 
